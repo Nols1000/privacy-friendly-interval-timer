@@ -1,4 +1,4 @@
-/**
+/*
  * This file is part of Privacy Friendly Interval Timer.
  * Privacy Friendly Interval Timer is free software:
  * you can redistribute it and/or modify it under the terms of the
@@ -238,7 +238,7 @@ public class WorkoutActivity extends AppCompatActivity {
 
                     currentSetsInfo.setText(getResources().getString(R.string.workout_info) + ": " + Integer.toString(currentSet) + "/" + Integer.toString(sets));
                 }
-                if (intent.getBooleanExtra("workout_finished", false) != false) {
+                if (intent.getBooleanExtra("workout_finished", false)) {
                     showFinishedView();
                 }
                 if (intent.getLongExtra("new_timer", 0) != 0) {
@@ -420,7 +420,7 @@ public class WorkoutActivity extends AppCompatActivity {
 
         final CharSequence[] item = {getResources().getString(R.string.workout_canceled_check)};
         final boolean[] selection = {false};
-        final ArrayList selectedItem = new ArrayList();
+        final ArrayList<Integer> selectedItem = new ArrayList<>();
 
         alertBuilder.setMultiChoiceItems(item, selection, new DialogInterface.OnMultiChoiceClickListener() {
             @Override
